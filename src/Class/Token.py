@@ -3,7 +3,7 @@ from web3 import Web3
 import json
 
 class Token:
-    def __init__(self, w3 : Web3, tokenAddress : str, isWeth = None):
+    def __init__(self, w3 : Web3, tokenAddress : str, isWeth = False):
         try:
             self.address = w3.to_checksum_address(tokenAddress)
 
