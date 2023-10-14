@@ -12,5 +12,13 @@
         "uniswapv2_factory" : "0x7E0987E5b3a30e3f2828572Bb659A548460a3003",
         "phantom" : "0x81c7D09621D5fa4643464B12A83Bb541acb547FF",
         "weth" : "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"
+    },
+
+    "testnet":
+    {
+        "uniswapv2_router" : "",
+        "uniswapv2_factory" : "",
+        "phantom" : "",
+        "weth" : ""
     }
 }

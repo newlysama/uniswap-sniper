@@ -3,11 +3,11 @@ from web3 import Web3
 import json
 
 class Token:
-    def __init__(self, w3 : Web3, tokenAddress : str):
+    def __init__(self, w3 : Web3, tokenAddress : str, isWeth = None):
         try:
             self.address = w3.to_checksum_address(tokenAddress)
 
-            if tokenAddress == "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9":
+            if isWeth:
                 f = open("resources/abis/weth.json", 'r')
                 self.abi = json.load(f)
                 f.close()

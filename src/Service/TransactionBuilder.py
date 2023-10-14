@@ -13,41 +13,45 @@ class TransactionBuilder :
     address = json.load(open("resources/accounts.json", 'r'))['sniper']['address']
 
     @staticmethod
-    def buildCheckScamBundle(info: Info, pair: Pair, tx: dict):
+    def buildCheckScamBundle(info: Info, pair: Pair, tx: dict) -> list :
         # Extract needed infos
+        w3 = info.w3
         phantom = info.phantom
         token = pair.token
+        sniperAddress = w3.to_checksum_address(info.sniper.address)
 
         logger.debug("Building checkScam transaction...")
         try:
-            checkTokenTx = phantom.contract.functions.checkScam(token.address).build_transaction({});
+            checkScamTx = phantom.contract.functions.checkScam(token.address).build_transaction({
+                "from": sniperAddress,
+                "nonce": w3.eth.get_transaction_count(sniperAddress),
+                "gas": 300000,
+                "gasPrice": w3.eth.gas_price
+            });
+
         except Exception as e:
             raise Exception(f"could not build transaction : {str(e)}")
         logger.debug("TRANSACTION BUILT")
 
-        bundle = {
-            "chainId": 1,  # Mainnet id
+        body1 = {
+
+        }
+
+        # Check scam body
+        body2 = {
+            "chainId": 1,
+            "from": str(sniperAddress),
+            "to": str(phantom.address),
+            "value": "0x0",
+            "data": checkScamTx['data'],
+            "gasLimit": 500000,
             "stateOverrides": {
-                "balanceOverrides": {
-                    str(TransactionBuilder.address): "10000000000000000000"  # 10 ETH in Wei
+                str(phantom.address): {
+                    "balance": "100000000000000000000"  # 10 ETH
                 }
-            },
-            "transactions": [
-                {
-                    "from": tx['from'],
-                    "to": tx['to'],
-                    "data": tx['input'],
-                    "gasLimit": tx['gas'],
-                    "value": str(tx['value'])
-                },
-                {
-                    "from": str(TransactionBuilder.address),
-                    "to": str(phantom.address),
-                    "data": checkTokenTx['input'],
-                }
-            ]
+            }
         }
 
         logger.debug("BUNDLE BUILT")
 
-        return bundle
+        return [body1, body2]

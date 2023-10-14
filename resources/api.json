@@ -15,5 +15,11 @@
         "goerli" : "https://goerli.infura.io/v3/dd8766c3da8e448d81133d2075db7544",
         "sepolia" : "https://sepolia.infura.io/v3/dd8766c3da8e448d81133d2075db7544",
         "secret" : "f0d4197b046a4e689b3830a294846e26"
+    },
+
+    "reth":
+    {
+        "mainnet" : "",
+        "testnet" : ""
     }
 }

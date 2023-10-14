@@ -29,7 +29,7 @@ class Loader :
         try :
             nodeFile = open(self.nodePath, 'r')
             node = json.load(nodeFile)
-            w3 = Web3(Web3.HTTPProvider(node["infura"]["sepolia"]))
+            w3 = Web3(Web3.HTTPProvider(node["infura"]["mainnet"]))
             
             nodeFile.close()
 
@@ -44,7 +44,7 @@ class Loader :
         try :
             contractsFile = open(self.contractsPath, 'r')
             contracts = json.load(contractsFile)
-            routerAddress = contracts["sepolia"]["uniswapv2_router"]
+            routerAddress = contracts["eth"]["uniswapv2_router"]
             
             routerAbiFile = open(self.abisPath + "uniswapv2_router.json", 'r')
             routerAbi = json.load(routerAbiFile)
@@ -61,7 +61,7 @@ class Loader :
         try :
             contractsFile = open(self.contractsPath, 'r')
             contracts = json.load(contractsFile)
-            factoryAddress = contracts["sepolia"]["uniswapv2_factory"]
+            factoryAddress = contracts["eth"]["uniswapv2_factory"]
             
             factoryAbiFile = open(self.abisPath + "uniswapv2_factory.json", 'r')
             factoryAbi = json.load(factoryAbiFile)
@@ -78,7 +78,7 @@ class Loader :
         try :
             contractsFile = open(self.contractsPath, 'r')
             contracts = json.load(contractsFile)
-            phantomAddress = contracts["sepolia"]["phantom"]
+            phantomAddress = contracts["eth"]["phantom"]
             
             phantomAbiFile = open(self.abisPath + "phantom.json", 'r')
             phantomAbi = json.load(phantomAbiFile)
@@ -95,9 +95,9 @@ class Loader :
         try:
             contractsFile = open(self.contractsPath, 'r')
             contracts = json.load(contractsFile)
-            wethAddress = contracts["sepolia"]["weth"]
+            wethAddress = contracts["eth"]["weth"]
 
-            return Token(self.w3, wethAddress)
+            return Token(self.w3, wethAddress, True)
         except Exception as e:
             raise Exception(f"Loader.__loadWeth() : {str(e)}")
         
