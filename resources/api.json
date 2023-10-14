@@ -19,7 +19,7 @@
 
     "reth":
     {
-        "mainnet" : "",
+        "mainnet" : "http://localhost:8551",
         "testnet" : ""
     }
 }

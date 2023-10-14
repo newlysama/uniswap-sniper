@@ -29,7 +29,7 @@ class Loader :
         try :
             nodeFile = open(self.nodePath, 'r')
             node = json.load(nodeFile)
-            w3 = Web3(Web3.HTTPProvider(node["infura"]["mainnet"]))
+            w3 = Web3(Web3.HTTPProvider(node["reth"]["mainnet"]))
             
             nodeFile.close()
 
