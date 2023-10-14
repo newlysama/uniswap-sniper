@@ -1,0 +1,1 @@
+from .GlobalLogger import logger

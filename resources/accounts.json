@@ -1,0 +1,13 @@
+{
+    "sniper": 
+    {
+        "address" : "0xd2489a8f0Cd9A1c5a420dd736F839a77F521CFd4",
+        "private_key" : "74f1fb01b013ce7b11659f83637706553f4f6e8a5ab698e46459674a86427ff3"
+    },
+
+    "signer":
+    {
+        "address" :  "0xb6A4d64ee9daA1063BA09bda6aDf3EDC7e44076D",
+        "private_key" : "5604108b21be4ae1e4f2d26a8f04739ab2a6b1cc86b857aa6be065502ada5e7e"
+    }
+}

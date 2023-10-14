@@ -1,0 +1,19 @@
+{
+    "quicknode":
+    {
+        "endpoint" : "https://omniscient-solemn-slug.bsc.discover.quiknode.pro/1ee9104e4fc1df689407d6c8d64b577548579c1b/"
+    },
+
+    "bscscan":
+    {
+        "apikey" : "N5EMU866GGCSMJGTMVBZPHRVN1QNIMU6CH"
+    },
+
+    "infura" :
+    {
+        "mainnet" : "https://mainnet.infura.io/v3/dd8766c3da8e448d81133d2075db7544",
+        "goerli" : "https://goerli.infura.io/v3/dd8766c3da8e448d81133d2075db7544",
+        "sepolia" : "https://sepolia.infura.io/v3/dd8766c3da8e448d81133d2075db7544",
+        "secret" : "f0d4197b046a4e689b3830a294846e26"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "eth":
+    {
+        "uniswapv2_router" : "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+        "uniswapv2_factory" : "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+        "phantom" : "0x81c7D09621D5fa4643464B12A83Bb541acb547FF",
+        "weth" : "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    },
+    "sepolia":
+    {
+        "uniswapv2_router" : "0x86dcd3293C53Cf8EFd7303B57beb2a3F671dDE98",
+        "uniswapv2_factory" : "0x7E0987E5b3a30e3f2828572Bb659A548460a3003",
+        "phantom" : "0x81c7D09621D5fa4643464B12A83Bb541acb547FF",
+        "weth" : "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"
+    }
+}
